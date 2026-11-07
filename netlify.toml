@@ -1,0 +1,12 @@
+# Netlify configuration for Paramount Web Design
+# Static site — no build step needed.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Clean URL for the booking endpoint: /api/book -> netlify/functions/book.js
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

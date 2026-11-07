@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramount Web Design — Websites that work as hard as you do | Boston, MA</title>
+  <meta name="description" content="Family-owned, Boston-based web design studio. Custom websites for a clear $1,000 build fee plus $99/month care — hosting, security, backups, and ongoing updates included.">
+  <meta property="og:title" content="Paramount Web Design — Websites that work as hard as you do">
+  <meta property="og:description" content="Custom websites for a $1,000 build fee plus $99/month care. Hosting, security, and ongoing updates included.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234f46e5'/%3E%3Cstop offset='.5' stop-color='%237c3aed'/%3E%3Cstop offset='1' stop-color='%23db2777'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='24' font-weight='800' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Paramount Web Design",
+    "description": "Family-owned web design studio in Boston, MA. Custom websites, branding, social media, local SEO, and graphic design — a $1,000 build plus $99/month care.",
+    "email": "paramountwebdesign@outlook.com",
+    "telephone": "+18572207689",
+    "address": { "@type": "PostalAddress", "addressLocality": "Boston", "addressRegion": "MA", "addressCountry": "US" },
+    "priceRange": "$1,000 build + $99/month care plan"
+  }
+  </script>
+  <style>
+    /* ===== TOKENS & BASE ===== */
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.4rem + 2.5vw, 3.25rem);
+      --text-hero: clamp(2.5rem, 1.2rem + 4.5vw, 4.5rem);
+
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+
+      --bg: #faf9f7;
+      --surface: #ffffff;
+      --surface-2: #f4f2ee;
+      --line: #e7e4de;
+      --ink: #16161f;
+      --ink-soft: #46465a;
+      --muted: #6d6d80;
+      --indigo: #4f46e5;
+      --indigo-deep: #3730a3;
+      --indigo-tint: #eef0fe;
+      --violet: #7c3aed;
+      --pink: #db2777;
+      --gold: #f0a800;
+      --gold-soft: #fde047;
+      --dark: #191734;
+      --dark-2: #221f4a;
+
+      --font-display: 'Clash Display', 'Satoshi', sans-serif;
+      --font-body: 'Satoshi', 'Inter', system-ui, sans-serif;
+
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --shadow-sm: 0 1px 2px rgba(22, 22, 31, 0.05);
+      --shadow-md: 0 6px 20px rgba(22, 22, 31, 0.07);
+      --shadow-lg: 0 24px 48px -16px rgba(22, 22, 31, 0.16);
+      --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; }
+    p, li { text-wrap: pretty; max-width: 72ch; }
+
+    ::selection { background: rgba(79, 70, 229, 0.22); }
+    :focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 4px; }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 var(--space-8); }
+
+    section { padding: clamp(var(--space-12), 6vw, var(--space-24)) 0; }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--indigo);
+      margin-bottom: var(--space-4);
+    }
+    .kicker::before {
+      content: "";
+      width: 26px; height: 2px;
+      background: linear-gradient(90deg, var(--indigo), var(--pink));
+      border-radius: 2px;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.12; text-wrap: balance; }
+    h1 { font-size: var(--text-hero); font-weight: 600; letter-spacing: -0.015em; }
+    h2 { font-size: var(--text-2xl); font-weight: 600; letter-spacing: -0.01em; margin-bottom: var(--space-4); }
+    h3 { font-size: var(--text-lg); font-weight: 600; }
+
+    .section-head { max-width: 720px; margin-bottom: var(--space-12); }
+    .section-head p { color: var(--ink-soft); font-size: var(--text-lg); }
+
+    .grad-text {
+      background: linear-gradient(100deg, var(--indigo) 10%, var(--violet) 55%, var(--pink) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+      font-family: var(--font-body); font-weight: 700; font-size: var(--text-sm);
+      padding: 0.85rem 1.75rem; border-radius: 999px; border: 1.5px solid transparent;
+      text-decoration: none; cursor: pointer; white-space: nowrap;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+    }
+    .btn-primary { background: var(--indigo); color: #fff; box-shadow: 0 10px 24px -10px rgba(79, 70, 229, 0.55); }
+    .btn-primary:hover { background: var(--indigo-deep); transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba(79, 70, 229, 0.55); }
+    .btn-outline { background: transparent; color: var(--indigo); border-color: #c7cdf8; }
+    .btn-outline:hover { border-color: var(--indigo); background: var(--indigo-tint); transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(120deg, var(--gold-soft), var(--gold)); color: #241d04; box-shadow: 0 12px 26px -10px rgba(240, 168, 0, 0.6); }
+    .btn-gold:hover { transform: translateY(-2px); filter: brightness(1.04); }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: sticky; top: 0; z-index: 60;
+      background: rgba(250, 249, 247, 0.86);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--space-4); padding: var(--space-3) 0;
+    }
+    .logo-wrapper { display: flex; align-items: center; gap: var(--space-3); text-decoration: none; }
+    .logo-mark {
+      display: flex; align-items: center; justify-content: center;
+      width: 46px; height: 46px; border-radius: 14px 5px 14px 5px;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+      box-shadow: 0 8px 16px -8px rgba(79, 70, 229, 0.6);
+      color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+      letter-spacing: 0.02em; transition: transform var(--transition);
+    }
+    .logo-wrapper:hover .logo-mark { transform: rotate(-4deg) scale(1.05); }
+    .logo-text { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em; color: var(--ink); }
+    .logo-text span { display: block; font-family: var(--font-body); font-weight: 500; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.02em; margin-top: -3px; }
+
+    .header-nav { display: flex; align-items: center; gap: var(--space-8); }
+    .header-nav a:not(.btn) {
+      font-size: var(--text-sm); font-weight: 500; color: var(--ink-soft);
+      text-decoration: none; position: relative; padding: var(--space-1) 0;
+    }
+    .header-nav a:not(.btn)::after {
+      content: ""; position: absolute; left: 0; bottom: -2px; width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--indigo), var(--pink));
+      border-radius: 2px; transform: scaleX(0); transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .header-nav a:not(.btn):hover { color: var(--indigo); }
+    .header-nav a:not(.btn):hover::after { transform: scaleX(1); }
+
+    /* ===== HERO ===== */
+    .hero { padding: clamp(var(--space-12), 6vw, var(--space-20)) 0 clamp(var(--space-10), 5vw, var(--space-16)) 0; overflow: hidden; position: relative; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(48rem 30rem at 85% -10%, rgba(124, 58, 237, 0.08), transparent 60%),
+        radial-gradient(40rem 26rem at -10% 20%, rgba(79, 70, 229, 0.07), transparent 60%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(var(--space-8), 4vw, var(--space-16)); align-items: center; position: relative; }
+    .hero h1 { margin-bottom: var(--space-5); }
+    .hero-lede { font-size: var(--text-lg); color: var(--ink-soft); max-width: 34rem; margin-bottom: var(--space-8); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-8); }
+    .hero-points { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-8); list-style: none; }
+    .hero-points li { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); font-weight: 500; color: var(--ink-soft); }
+    .hero-points .tick { color: var(--indigo); font-weight: 800; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      background: var(--surface); border: 1px solid var(--line);
+      font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--ink-soft); padding: 0.45rem 1rem; border-radius: 999px;
+      box-shadow: var(--shadow-sm); margin-bottom: var(--space-6);
+    }
+    .hero-eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2); }
+
+    /* Browser mockup */
+    .mockup-wrap { position: relative; }
+    .mockup {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg); overflow: hidden;
+      transform: rotate(1.2deg); transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mockup-wrap:hover .mockup { transform: rotate(0deg) translateY(-4px); }
+    .mockup-bar { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--line); background: var(--surface-2); }
+    .mockup-bar .d { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-bar .d1 { background: #f87171; } .mockup-bar .d2 { background: #fbbf24; } .mockup-bar .d3 { background: #34d399; }
+    .mockup-bar .url { flex: 1; margin-left: var(--space-2); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; font-size: 0.72rem; color: var(--muted); padding: 2px 10px; font-family: var(--font-body); }
+    .mockup-body { padding: var(--space-6); display: grid; gap: var(--space-4); }
+    .mk-nav { display: flex; align-items: center; justify-content: space-between; }
+    .mk-logo { width: 84px; height: 14px; border-radius: 4px; background: linear-gradient(90deg, var(--indigo), var(--pink)); }
+    .mk-links { display: flex; gap: var(--space-2); }
+    .mk-links i { display: block; width: 34px; height: 7px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); }
+    .mk-hero { border-radius: var(--radius-md); padding: var(--space-5); background: linear-gradient(120deg, #1e1b4b, #312e81 60%, #4f46e5); color: #fff; }
+    .mk-hero .t { width: 65%; height: 12px; border-radius: 4px; background: rgba(255,255,255,0.9); margin-bottom: 8px; }
+    .mk-hero .t2 { width: 45%; height: 12px; border-radius: 4px; background: rgba(255,255,255,0.55); margin-bottom: 14px; }
+    .mk-hero .btn { width: 88px; height: 20px; border-radius: 999px; background: var(--gold-soft); }
+    .mk-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+    .mk-card { border: 1px solid var(--line); border-radius: 10px; padding: var(--space-3); }
+    .mk-card .ic { width: 22px; height: 22px; border-radius: 7px; background: var(--indigo-tint); margin-bottom: 8px; }
+    .mk-card .l1 { width: 80%; height: 7px; border-radius: 4px; background: var(--surface-2); margin-bottom: 5px; }
+    .mk-card .l2 { width: 60%; height: 7px; border-radius: 4px; background: var(--line); }
+    .mockup-float {
+      position: absolute; right: -14px; bottom: 22px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      box-shadow: var(--shadow-lg); padding: 0.7rem 1.1rem;
+      display: flex; align-items: center; gap: var(--space-3);
+      font-size: 0.82rem; font-weight: 700; color: var(--ink);
+      animation: floaty 5s ease-in-out infinite;
+    }
+    .mockup-float .amt { font-family: var(--font-display); color: var(--indigo); font-size: 1.05rem; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+    /* ===== SERVICE STRIP ===== */
+    .service-strip { background: var(--dark); color: #fff; padding: var(--space-4) 0; }
+    .service-strip .container { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4) var(--space-10); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.04em; }
+    .service-strip span { display: inline-flex; align-items: center; gap: 0.5rem; color: #c9c6f2; }
+    .service-strip span::before { content: "✦"; color: var(--gold-soft); font-size: 0.9em; }
+
+    /* ===== SERVICES ===== */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+    .service-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-xl);
+      padding: var(--space-8); position: relative; overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: #c7cdf8; }
+    .service-card::after {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--indigo), var(--pink));
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .service-card:hover::after { opacity: 1; }
+    .service-icon {
+      width: 54px; height: 54px; border-radius: 16px; display: flex; align-items: center; justify-content: center;
+      background: var(--indigo-tint); color: var(--indigo); margin-bottom: var(--space-5);
+    }
+    .service-icon svg { width: 26px; height: 26px; }
+    .service-card h3 { margin-bottom: var(--space-3); }
+    .service-card p { color: var(--ink-soft); font-size: var(--text-sm); margin-bottom: var(--space-5); }
+    .service-card .meta {
+      font-size: var(--text-xs); font-weight: 700; color: var(--indigo); letter-spacing: 0.05em; text-transform: uppercase;
+      border-top: 1px solid var(--line); padding-top: var(--space-4);
+    }
+
+    /* ===== PRICING ===== */
+    .pricing-section { background: var(--surface); border-block: 1px solid var(--line); }
+    .pricing-hero {
+      background: linear-gradient(135deg, #191734 0%, #241f52 100%);
+      border-radius: var(--radius-xl); color: #fff;
+      padding: clamp(var(--space-8), 4vw, var(--space-16));
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-8);
+      box-shadow: var(--shadow-lg); position: relative; overflow: hidden;
+    }
+    .pricing-hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(30rem 20rem at 90% -20%, rgba(124, 58, 237, 0.35), transparent 65%);
+    }
+    .pricing-hero h3 {
+      font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); font-weight: 600;
+      max-width: 22ch; margin-bottom: var(--space-4); position: relative;
+    }
+    .pricing-hero .price-sub { color: #c7c9f5; font-size: var(--text-base); max-width: 44ch; position: relative; }
+    .price-badge {
+      position: relative; text-align: center;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      color: #241d04; border-radius: 24px; padding: var(--space-5) var(--space-8);
+      box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.45);
+    }
+    .price-badge .amt { font-family: var(--font-display); font-size: clamp(2.4rem, 2rem + 2vw, 3.4rem); font-weight: 700; line-height: 1; }
+    .price-badge .per { font-weight: 700; font-size: var(--text-sm); }
+    .price-badge .note { font-size: var(--text-xs); font-weight: 600; margin-top: 6px; }
+    .price-badges { display: grid; gap: var(--space-4); position: relative; }
+    .price-badge.secondary {
+      background: transparent; border: 2px solid rgba(253, 224, 71, 0.55); color: #fde047;
+      box-shadow: none; padding: var(--space-4) var(--space-6);
+    }
+    .price-badge.secondary .per, .price-badge.secondary .note { color: #fde047; }
+
+    .included-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); margin-top: var(--space-12); }
+    .included-col > h3 { margin-bottom: var(--space-5); font-size: var(--text-lg); }
+    .included-col > h3 span { color: var(--indigo); }
+    .included { list-style: none; display: grid; gap: var(--space-5); }
+    .included li { display: flex; gap: var(--space-3); align-items: flex-start; }
+    .included .check {
+      flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+      background: var(--indigo-tint); color: var(--indigo);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 800; margin-top: 2px;
+    }
+    .included strong { display: block; font-size: var(--text-base); }
+    .included span { color: var(--ink-soft); font-size: var(--text-sm); }
+
+    .compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: var(--space-6); align-items: stretch; margin-top: var(--space-12); }
+    .compare-card { border-radius: var(--radius-lg); padding: var(--space-8); }
+    .compare-card .label { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-3); }
+    .compare-card .figure { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 600; margin-bottom: var(--space-2); }
+    .compare-card .desc { font-size: var(--text-sm); color: var(--ink-soft); }
+    .compare-old { background: var(--surface-2); border: 1px dashed #d5d1c8; }
+    .compare-old .label { color: var(--muted); }
+    .compare-old .figure { color: var(--ink-soft); text-decoration: line-through; text-decoration-color: rgba(218, 38, 119, 0.55); text-decoration-thickness: 3px; }
+    .compare-new { background: var(--surface); border: 1.5px solid #c7cdf8; box-shadow: var(--shadow-md); }
+    .compare-new .label { color: var(--indigo); }
+    .compare-vs {
+      align-self: center; font-family: var(--font-display); font-weight: 600; color: var(--muted);
+      font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.12em;
+      text-align: center; padding: 0 var(--space-2);
+    }
+
+    .stats-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6);
+      margin-top: var(--space-12); text-align: center;
+    }
+    .stat { border-left: 1px solid var(--line); }
+    .stat:first-child { border-left: none; }
+    .stat .big { font-family: var(--font-display); font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.6rem); font-weight: 700; color: var(--indigo); letter-spacing: -0.01em; }
+    .stat .label { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: var(--space-1); }
+
+    .pricing-legal { margin-top: var(--space-10); font-size: var(--text-sm); color: var(--ink-soft); max-width: 68ch; }
+
+    /* ===== PROCESS ===== */
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); counter-reset: step; }
+    .step-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-xl); padding: var(--space-8); position: relative; }
+    .step-number {
+      font-family: var(--font-display); font-weight: 700; font-size: 2.6rem; line-height: 1;
+      background: linear-gradient(135deg, var(--indigo), var(--pink));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+      margin-bottom: var(--space-4); opacity: 0.9;
+    }
+    .step-card h3 { margin-bottom: var(--space-3); }
+    .step-card p { color: var(--ink-soft); font-size: var(--text-sm); }
+
+    /* ===== ABOUT ===== */
+    .about-section { background: var(--surface); border-block: 1px solid var(--line); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(var(--space-8), 4vw, var(--space-16)); align-items: center; }
+    .about-text p { color: var(--ink-soft); margin-bottom: var(--space-4); }
+    .about-quote {
+      font-family: var(--font-display); font-size: var(--text-lg); font-weight: 500; color: var(--indigo);
+      border-left: 5px solid var(--violet); padding-left: var(--space-5); margin-top: var(--space-6); font-style: italic;
+    }
+    .about-quote small { display: block; font-family: var(--font-body); font-style: normal; font-weight: 500; color: var(--muted); font-size: var(--text-sm); margin-top: var(--space-2); }
+    .founder-highlight {
+      background: var(--dark); color: #fff; border-radius: var(--radius-xl);
+      padding: clamp(var(--space-8), 3vw, var(--space-12)); position: relative; overflow: hidden;
+    }
+    .founder-highlight::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(26rem 18rem at 110% 0%, rgba(219, 38, 119, 0.25), transparent 60%);
+    }
+    .founder-highlight h3 { color: #fff; font-size: var(--text-xl); margin-bottom: var(--space-5); position: relative; }
+    .founder-highlight h3 em { font-style: normal; color: var(--gold-soft); }
+    .founder-highlight p { color: #c9c6f2; font-size: var(--text-base); margin-bottom: var(--space-4); position: relative; }
+    .founder-highlight .chip-row { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); position: relative; }
+    .founder-highlight .chip {
+      font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      border: 1px solid rgba(199, 201, 245, 0.35); color: #e4e3fb; border-radius: 999px; padding: 0.4rem 0.9rem;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 780px; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-item:first-child { border-top: 1px solid var(--line); }
+    .faq-item summary {
+      list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
+      padding: var(--space-5) var(--space-2); font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); color: var(--ink);
+      transition: color var(--transition);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { color: var(--indigo); }
+    .faq-item summary .plus {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+      background: var(--indigo-tint); color: var(--indigo);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+      transition: transform var(--transition), background var(--transition);
+    }
+    .faq-item[open] summary .plus { transform: rotate(45deg); background: var(--indigo); color: #fff; }
+    .faq-item .faq-body { padding: 0 var(--space-2) var(--space-5); color: var(--ink-soft); font-size: var(--text-base); max-width: 68ch; }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      background: linear-gradient(135deg, #191734 0%, #241f52 100%);
+      border-radius: var(--radius-xl); text-align: center; color: #fff;
+      padding: clamp(var(--space-12), 5vw, var(--space-20)) var(--space-8);
+      position: relative; overflow: hidden;
+    }
+    .final-cta::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(36rem 22rem at 50% -30%, rgba(124, 58, 237, 0.4), transparent 65%);
+    }
+    .final-cta h2 { color: #fff; position: relative; }
+    .final-cta p { color: #c7c9f5; font-size: var(--text-lg); max-width: 46ch; margin: 0 auto var(--space-8); position: relative; }
+    .final-cta .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4); position: relative; }
+    .final-cta .contact-details {
+      margin-top: var(--space-8); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4) var(--space-10);
+      font-size: var(--text-sm); color: #c7c9f5; position: relative;
+    }
+    .final-cta .contact-details a { color: var(--gold-soft); font-weight: 600; text-decoration: none; }
+    .final-cta .contact-details a:hover { text-decoration: underline; }
+
+    /* ===== BOOKING FORM ===== */
+    .booking-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(var(--space-8), 4vw, var(--space-16)); align-items: center; position: relative; text-align: left; }
+    .booking-grid h2 { margin-bottom: var(--space-4); }
+    .booking-grid p { margin: 0; }
+    .booking-grid .contact-details { justify-content: flex-start; margin-top: var(--space-6); text-align: left; }
+    .form-card { background: var(--surface); border-radius: var(--radius-lg); padding: clamp(var(--space-6), 3vw, var(--space-8)); box-shadow: var(--shadow-lg); position: relative; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+    .field input, .field textarea {
+      border: 1px solid var(--line); border-radius: 10px; padding: 0.65rem 0.9rem;
+      font-family: var(--font-body); font-size: var(--text-sm); background: var(--bg); color: var(--ink);
+      outline: none; transition: border-color var(--transition), box-shadow var(--transition); width: 100%;
+    }
+    .field input:focus, .field textarea:focus { border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12); }
+    .field textarea { min-height: 100px; resize: vertical; }
+    .form-card .btn { width: 100%; margin-top: var(--space-5); }
+    .form-note { font-size: var(--text-xs); color: var(--muted); text-align: center; margin-top: var(--space-3); }
+    .form-success { text-align: center; }
+    .form-success h3 { color: var(--ink); }
+    .form-card .form-note { color: #5d5d70; }
+    .form-success .big-check {
+      width: 56px; height: 56px; border-radius: 50%; margin: 0 auto var(--space-4);
+      background: var(--indigo-tint); color: var(--indigo); font-size: 1.6rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .form-success h3 { margin-bottom: var(--space-3); }
+    .form-success p { color: var(--ink-soft); font-size: var(--text-sm); margin-bottom: var(--space-3); }
+    .form-success a { color: var(--indigo); font-weight: 600; }
+    .form-success .btn { width: auto; margin-top: var(--space-4); }
+    @media (max-width: 900px) { .booking-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
+
+    /* ===== FOOTER ===== */
+    .site-footer { border-top: 1px solid var(--line); padding: var(--space-12) 0 var(--space-8); }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-10); }
+    .footer-brand { max-width: 300px; }
+    .footer-brand .logo-wrapper { margin-bottom: var(--space-4); }
+    .footer-brand p { font-size: var(--text-sm); color: var(--muted); }
+    .footer-col h4 { font-family: var(--font-body); font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: var(--space-4); }
+    .footer-col ul { list-style: none; display: grid; gap: var(--space-2); }
+    .footer-col a { font-size: var(--text-sm); color: var(--ink-soft); text-decoration: none; }
+    .footer-col a:hover { color: var(--indigo); }
+    .footer-copy {
+      width: 100%; text-align: center; margin-top: var(--space-10); padding-top: var(--space-6);
+      border-top: 1px solid var(--line); font-size: var(--text-xs); color: var(--muted);
+    }
+
+    /* ===== CHATBOT ===== */
+    .chat-launcher {
+      position: fixed; right: 22px; bottom: 22px; z-index: 90;
+      display: flex; align-items: center; gap: var(--space-3);
+      background: var(--indigo); color: #fff; border: none; cursor: pointer;
+      padding: 0.9rem 1.4rem; border-radius: 999px;
+      font-family: var(--font-body); font-weight: 700; font-size: var(--text-sm);
+      box-shadow: 0 14px 32px -10px rgba(79, 70, 229, 0.65);
+      transition: transform var(--transition), background var(--transition), opacity var(--transition);
+    }
+    .chat-launcher:hover { transform: translateY(-2px); background: var(--indigo-deep); }
+    body.form-focus .chat-launcher { opacity: 0; pointer-events: none; }
+    .chat-launcher .pulse { position: relative; width: 10px; height: 10px; }
+    .chat-launcher .pulse::before {
+      content: ""; position: absolute; inset: 0; border-radius: 50%; background: #4ade80;
+      animation: pulse 2s ease-out infinite;
+    }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); } 70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); } 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); } }
+
+    .chat-panel {
+      position: fixed; right: 22px; bottom: 92px; z-index: 95;
+      width: min(380px, calc(100vw - 32px));
+      height: min(560px, calc(100dvh - 130px));
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      box-shadow: 0 32px 64px -16px rgba(22, 22, 31, 0.35);
+      display: flex; flex-direction: column; overflow: hidden;
+      opacity: 0; transform: translateY(16px) scale(0.97); pointer-events: none;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+    .chat-panel.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .chat-head {
+      display: flex; align-items: center; gap: var(--space-3);
+      background: linear-gradient(135deg, #191734, #312e81); color: #fff; padding: var(--space-4) var(--space-5);
+    }
+    .chat-head .logo-mark { width: 38px; height: 38px; font-size: 0.85rem; border-radius: 11px 4px 11px 4px; flex-shrink: 0; }
+    .chat-head .titles { flex: 1; min-width: 0; }
+    .chat-head .titles strong { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
+    .chat-head .titles span { display: block; font-size: 0.72rem; color: #b9bcf0; }
+    .chat-head .status { display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; color: #86efac; font-weight: 600; }
+    .chat-head .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #4ade80; }
+    .chat-close {
+      background: none; border: none; color: #c7c9f5; cursor: pointer; padding: 4px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .chat-close:hover { color: #fff; background: rgba(255,255,255,0.1); }
+
+    .chat-log { flex: 1; overflow-y: auto; padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); background: var(--bg); }
+    .msg { max-width: 85%; font-size: var(--text-sm); line-height: 1.5; }
+    .msg.bot { align-self: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px 14px 14px 4px; padding: 0.7rem 1rem; box-shadow: var(--shadow-sm); }
+    .msg.user { align-self: flex-end; background: var(--indigo); color: #fff; border-radius: 14px 14px 4px 14px; padding: 0.7rem 1rem; }
+    .msg.bot strong { color: var(--indigo); }
+    .msg .msg-link { color: var(--indigo); font-weight: 600; }
+    .typing { display: flex; gap: 4px; align-items: center; padding: 0.9rem 1rem; }
+    .typing i { width: 7px; height: 7px; border-radius: 50%; background: #b1aec7; animation: blink 1.2s infinite; }
+    .typing i:nth-child(2) { animation-delay: 0.2s; } .typing i:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes blink { 0%, 80%, 100% { opacity: 0.3; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+
+    .chat-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); padding: 0 var(--space-5) var(--space-3); background: var(--bg); }
+    .chip-btn {
+      background: var(--surface); border: 1px solid #c7cdf8; color: var(--indigo);
+      font-size: 0.8rem; font-weight: 600; border-radius: 999px; padding: 0.45rem 0.95rem; cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+      font-family: var(--font-body);
+    }
+    .chip-btn:hover { background: var(--indigo-tint); border-color: var(--indigo); }
+
+    .chat-input { display: flex; gap: var(--space-2); padding: var(--space-3) var(--space-4); border-top: 1px solid var(--line); background: var(--surface); }
+    .chat-input input {
+      flex: 1; border: 1px solid var(--line); border-radius: 999px; padding: 0.65rem 1.1rem;
+      font-size: var(--text-sm); font-family: var(--font-body); background: var(--bg); color: var(--ink); outline: none;
+      transition: border-color var(--transition);
+    }
+    .chat-input input:focus { border-color: var(--indigo); }
+    .chat-input button {
+      background: var(--indigo); color: #fff; border: none; border-radius: 50%;
+      width: 42px; height: 42px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background var(--transition), transform var(--transition);
+    }
+    .chat-input button:hover { background: var(--indigo-deep); transform: scale(1.05); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1020px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { grid-template-columns: repeat(2, 1fr); gap: var(--space-8); }
+      .stat:nth-child(3) { border-left: none; }
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .mockup-wrap { max-width: 520px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .compare { grid-template-columns: 1fr; }
+      .compare-vs { padding: 0; }
+      .included-wrap { grid-template-columns: 1fr; gap: var(--space-8); }
+      .steps-grid { grid-template-columns: 1fr; }
+      .header-nav { gap: var(--space-5); }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 var(--space-5); }
+      .header-nav a:not(.btn) { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .stat { border-left: none; }
+      .footer-inner { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .mockup-float { right: 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo-wrapper" aria-label="Paramount Web Design — home">
+        <div class="logo-mark" aria-hidden="true">P</div>
+        <div class="logo-text">Paramount Web Design<span>paramountwebdesign.com</span></div>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <button class="btn btn-primary" data-chat-open>Let's chat</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-eyebrow"><span class="dot" aria-hidden="true"></span> Family-owned · Boston-based · Est. 2023</div>
+          <h1>A website that works <span class="grad-text">as hard as you do.</span></h1>
+          <p class="hero-lede">Custom web design for small businesses — one clear build fee, then simple monthly care that keeps your site fast, secure, and fresh.</p>
+          <div class="hero-actions">
+            <a href="#book" class="btn btn-primary">Start your website</a>
+            <button class="btn btn-outline" data-chat-open>Ask us anything</button>
+          </div>
+          <ul class="hero-points">
+            <li><span class="tick">✓</span> $1,000 build · $99/mo care</li>
+            <li><span class="tick">✓</span> Hosting &amp; care included</li>
+            <li><span class="tick">✓</span> Monthly check-ins</li>
+          </ul>
+        </div>
+
+        <div class="mockup-wrap" aria-hidden="true">
+          <div class="mockup">
+            <div class="mockup-bar">
+              <span class="d d1"></span><span class="d d2"></span><span class="d d3"></span>
+              <span class="url">yourbusiness.com</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mk-nav">
+                <div class="mk-logo"></div>
+                <div class="mk-links"><i></i><i></i><i></i></div>
+              </div>
+              <div class="mk-hero">
+                <div class="t"></div><div class="t2"></div><div class="btn"></div>
+              </div>
+              <div class="mk-cards">
+                <div class="mk-card"><div class="ic"></div><div class="l1"></div><div class="l2"></div></div>
+                <div class="mk-card"><div class="ic"></div><div class="l1"></div><div class="l2"></div></div>
+                <div class="mk-card"><div class="ic"></div><div class="l1"></div><div class="l2"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-float"><span class="amt">$1,000</span> build · <span class="amt">$99</span>/mo care</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICE STRIP ===== -->
+    <div class="service-strip" role="presentation">
+      <div class="container">
+        <span>Branding</span><span>Web Design</span><span>Social Media</span><span>Local SEO</span><span>Graphic Design</span><span>Digital Marketing</span>
+      </div>
+    </div>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Our services</div>
+          <h2>Everything your brand needs to stand out</h2>
+          <p>Six services under one roof — so your brand looks consistent everywhere your customers find you.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            </div>
+            <h3>Branding</h3>
+            <p>Logo, identity, and visual systems that make you unforgettable — built on strategy, not just style.</p>
+            <div class="meta">From strategy to rollout</div>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 9l3 3-3 3M12 15h5"/></svg>
+            </div>
+            <h3>Web Design</h3>
+            <p>Custom, responsive websites built around your brand and your customers — and kept fresh every month after.</p>
+            <div class="meta">$1,000 build + $99/mo care</div>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/><path d="M8.5 8.5h7M8.5 12h7"/></svg>
+            </div>
+            <h3>Social Media</h3>
+            <p>Content, management, and growth strategies that build a real community around your business.</p>
+            <div class="meta">Monthly management</div>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Local SEO</h3>
+            <p>Get found by the customers who are already searching for you — Google Business Profile and beyond.</p>
+            <div class="meta">Google Business Profile + more</div>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+            </div>
+            <h3>Graphic Design</h3>
+            <p>Print, digital, and campaign assets that stay on-brand — with fast turnaround you can plan around.</p>
+            <div class="meta">Fast turnaround</div>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-7-7 18-2-9-9-2z"/></svg>
+            </div>
+            <h3>Digital Marketing</h3>
+            <p>Full-funnel digital presence — from ads to landing pages — focused on performance you can measure.</p>
+            <div class="meta">Performance focused</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section id="pricing" class="pricing-section">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Web design · The website program</div>
+          <h2>A great website. Without the agency invoice.</h2>
+          <p>Most agencies quote $3,000–$10,000 up front — then you're on your own keeping the site alive. We charge one clear build fee, then a simple monthly plan that keeps your site looked after.</p>
+        </div>
+
+        <div class="pricing-hero">
+          <div>
+            <h3>One build fee. One care plan. No surprises.</h3>
+            <p class="price-sub">A custom, professionally-built website for $1,000 — then $99 a month to host it, protect it, and keep it fresh.</p>
+          </div>
+          <div class="price-badges">
+            <div class="price-badge">
+              <div class="amt">$1,000</div>
+              <div class="per">one-time build</div>
+              <div class="note">Custom design · launch included</div>
+            </div>
+            <div class="price-badge secondary">
+              <div class="amt" style="font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem);">+ $99</div>
+              <div class="per">per month care</div>
+              <div class="note">Hosting · security · updates</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="included-wrap">
+          <div class="included-col">
+            <h3>The $1,000 build</h3>
+            <ul class="included">
+              <li><span class="check" aria-hidden="true">✓</span><div><strong>Custom design</strong><span>A site made around your brand and your customers — not a template everyone else has.</span></div></li>
+              <li><span class="check" aria-hidden="true">✓</span><div><strong>Build &amp; launch</strong><span>Responsive on every device, fast-loading, and ready for your customers to find.</span></div></li>
+            </ul>
+          </div>
+          <div class="included-col">
+            <h3>The $99/month care plan</h3>
+            <ul class="included">
+              <li><span class="check" aria-hidden="true">✓</span><div><strong>Hosted &amp; protected</strong><span>Hosting, security, backups, and fixes stay our job — you never touch a plugin or a server.</span></div></li>
+              <li><span class="check" aria-hidden="true">✓</span><div><strong>Kept fresh</strong><span>New pages, photos, offers, and edits as your business changes — plus a monthly check-in on how it all performs.</span></div></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="compare">
+          <div class="compare-card compare-old">
+            <div class="label">The old way</div>
+            <div class="figure">$3,000 – $10,000 upfront</div>
+            <p class="desc">A typical agency build for a small business site — paid in a lump sum, and the maintenance is your problem after that.</p>
+          </div>
+          <div class="compare-vs" aria-hidden="true">vs</div>
+          <div class="compare-card compare-new">
+            <div class="label">The Paramount way</div>
+            <div class="figure">$1,000 + $99/mo</div>
+            <p class="desc">A clear build fee that's a fraction of agency pricing — then a care plan that keeps hosting, security, and updates off your plate for good.</p>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat"><div class="big">300+</div><div class="label">Brands served</div></div>
+          <div class="stat"><div class="big">6</div><div class="label">Services under one roof</div></div>
+          <div class="stat"><div class="big">$99</div><div class="label">Monthly care plan</div></div>
+          <div class="stat"><div class="big">Boston</div><div class="label">Born &amp; based</div></div>
+        </div>
+
+        <p class="pricing-legal">A website isn't a one-off purchase — it needs hosting, updates, and someone watching it. That's why every Paramount site launches with a care plan behind it. Looking for branding, social media, or local SEO? Ask us for a custom quote — bundle and save.</p>
+        <div style="margin-top: var(--space-8);">
+          <a href="#book" class="btn btn-primary">Book your free consult</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">How we work</div>
+          <h2>Three steps. No mystery.</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number" aria-hidden="true">01</div>
+            <h3>Tell us where you are</h3>
+            <p>A no-pressure chat about your business, your customers, and what's not working. You don't need a brief — just the honest version.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number" aria-hidden="true">02</div>
+            <h3>We plan it with you</h3>
+            <p>A clear proposal: what we'd do, in what order, what it costs, and what we need from you. No jargon, no mystery line items.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number" aria-hidden="true">03</div>
+            <h3>We run it — and you see it</h3>
+            <p>We do the work and you watch it land, with monthly check-ins so nothing quietly drifts for six months.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="about-section">
+      <div class="container about-grid">
+        <div class="about-text">
+          <div class="kicker">Who is Paramount</div>
+          <h2>Boston locals. Web design obsessives.</h2>
+          <p>Paramount Web Design is a family-owned studio founded by Boston locals who believe a website should be a living asset — not a one-time project that goes stale the week it launches.</p>
+          <p>Our approach is simple: quality tailored design, ongoing care, and strategic leverage. We simplify web design to authentically showcase your brand — with the marketing insight to make it pay off.</p>
+          <div class="about-quote">
+            "Results over everything."
+            <small>— The Paramount promise</small>
+          </div>
+        </div>
+        <div class="founder-highlight">
+          <h3>Family-owned. <em>Flagship-focused.</em></h3>
+          <p>We built Paramount Web Design so local businesses could get websites that actually move the needle — not just pretty pages that sit there.</p>
+          <p>Between us: brand strategy, web design, development, and the local know-how that makes a small business impossible to ignore in its own town.</p>
+          <div class="chip-row">
+            <span class="chip">Brand strategy</span><span class="chip">Web design</span><span class="chip">Development</span><span class="chip">Local know-how</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">FAQ</div>
+          <h2>Questions we get a lot</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>How does the pricing work?<span class="plus" aria-hidden="true">+</span></summary>
+            <div class="faq-body">Simple and two-part: a one-time $1,000 build fee covers the custom design, build, and launch of your website. After that, $99 a month covers hosting, security, backups, ongoing edits and updates, and a monthly check-in. No surprise invoices, ever.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What does the $99/month care plan cover?<span class="plus" aria-hidden="true">+</span></summary>
+            <div class="faq-body">Hosting, security, backups, and fixes — plus new pages, photos, offers, and edits as your business changes, and a monthly review of how your site looks, loads, and performs. A website isn't a one-off purchase; it needs someone watching it, and that's exactly what the care plan takes care of.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How long does a website take to build?<span class="plus" aria-hidden="true">+</span></summary>
+            <div class="faq-body">It depends on the scope, and we'll give you a clear timeline in your proposal before anything starts. Most small business sites come together in a few weeks once we have your content and photos.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Do I own my website?<span class="plus" aria-hidden="true">+</span></summary>
+            <div class="faq-body">You paid for the build, so the site is built for you and your business. Your care plan keeps it hosted, secure, and up to date — and if you ever want to talk about changing or moving it, we'll work it out with you. No games.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Do you only work with Boston businesses?<span class="plus" aria-hidden="true">+</span></summary>
+            <div class="faq-body">We're Boston-born and proud of it — but we work with small businesses anywhere. Local clients get the in-person treatment; everyone else gets the same quality, just over video calls.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Can you help with branding, social media, or SEO too?<span class="plus" aria-hidden="true">+</span></summary>
+            <div class="faq-body">Yes — that's the point of having six services under one roof. Branding, social media management, local SEO, graphic design, and digital marketing are all available, and bundling them with your website saves you money.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BOOKING / FINAL CTA ===== -->
+    <section id="book">
+      <div class="container">
+        <div class="final-cta">
+          <div class="booking-grid">
+            <div>
+              <h2>Your customers are searching.<br>Let's make sure they find you.</h2>
+              <p>Book a free, no-pressure consult. Tell us a little about your business and we'll reach out within one business day to set up a call. Worst case: you leave with a clear plan. Best case: you leave with us.</p>
+              <div class="contact-details">
+                <span>📧 <a href="mailto:paramountwebdesign@outlook.com">paramountwebdesign@outlook.com</a></span>
+                <span>📞 <a href="tel:+18572207689">(857) 220-7689</a></span>
+              </div>
+            </div>
+            <div>
+              <form class="form-card" id="bookForm">
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="f-name">Name *</label>
+                    <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="Jane Smith">
+                  </div>
+                  <div class="field">
+                    <label for="f-phone">Phone</label>
+                    <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="(555) 555-1234">
+                  </div>
+                  <div class="field full">
+                    <label for="f-email">Email *</label>
+                    <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="you@yourbusiness.com">
+                  </div>
+                  <div class="field full">
+                    <label for="f-notes">Notes</label>
+                    <textarea id="f-notes" name="notes" placeholder="Tell us about your business, your current site (if any), and what you're hoping to achieve…"></textarea>
+                  </div>
+                  <!-- Honeypot: hidden from humans, tempting to spam bots -->
+                  <div class="field full" hidden aria-hidden="true">
+                    <label for="f-hp">Leave this field empty</label>
+                    <input type="text" id="f-hp" name="company-website" tabindex="-1" autocomplete="off">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-gold">Book my free consult</button>
+                <p class="form-note">No spam, no pressure — we'll confirm a time that works for you.</p>
+              </form>
+              <div class="form-card form-success" id="formSuccess" hidden>
+                <div class="big-check" aria-hidden="true">✓</div>
+                <h3 id="successTitle">Almost there — hit send</h3>
+                <p id="successText"></p>
+                <p id="successExtra"></p>
+                <button type="button" class="btn btn-outline" id="resetForm">Book another consult</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#top" class="logo-wrapper" aria-label="Paramount Web Design — back to top">
+            <div class="logo-mark" aria-hidden="true">P</div>
+            <div class="logo-text">Paramount Web Design<span>paramountwebdesign.com</span></div>
+          </a>
+          <p>Family-owned web design studio in Boston, MA. Websites, branding, social media, local SEO, and graphic design — under one roof.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:paramountwebdesign@outlook.com">paramountwebdesign@outlook.com</a></li>
+            <li><a href="tel:+18572207689">(857) 220-7689</a></li>
+            <li><a href="#book">Book a consult</a></li>
+            <li><a href="#" data-chat-open>Chat with us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 Paramount Web Design · Boston, MA · Family-owned since 2023</div>
+    </div>
+  </footer>
+
+  <!-- ===== CHATBOT ===== -->
+  <button class="chat-launcher" data-chat-open aria-haspopup="dialog" aria-label="Open chat with Paramount Web Design">
+    <span class="pulse" aria-hidden="true"></span> Chat with us
+  </button>
+
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Paramount Web Design chat" aria-modal="false">
+    <div class="chat-head">
+      <div class="logo-mark" aria-hidden="true">P</div>
+      <div class="titles">
+        <strong>Paramount Assistant</strong>
+        <span>Answers questions · Books consults</span>
+      </div>
+      <span class="status">Online</span>
+      <button class="chat-close" data-chat-close aria-label="Close chat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="chat-log" id="chatLog" aria-live="polite"></div>
+    <div class="chat-chips" id="chatChips"></div>
+    <form class="chat-input" id="chatForm">
+      <input type="text" id="chatField" placeholder="Type a message…" autocomplete="off" aria-label="Type a message">
+      <button type="submit" aria-label="Send message">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+    </form>
+  </div>
+
+  <script>
+  /* ---------- Booking form: posts to the Netlify function (/api/book -> Resend).
+     Falls back to a pre-filled email if the endpoint isn't available (e.g. static preview). ---------- */
+  (function () {
+    'use strict';
+    var form = document.getElementById('bookForm');
+    var success = document.getElementById('formSuccess');
+    var successTitle = document.getElementById('successTitle');
+    var successText = document.getElementById('successText');
+    var successExtra = document.getElementById('successExtra');
+    var resetBtn = document.getElementById('resetForm');
+    if (!form) return;
+
+    function showSuccess(sent, name, email, mailto) {
+      var first = name.split(' ')[0];
+      if (sent) {
+        successTitle.textContent = 'Request sent';
+        successText.textContent = 'Thanks, ' + first + ' — we\u2019ve got your consult request. We\u2019ll reply to ' + email + ' within one business day.';
+        successExtra.innerHTML = 'Prefer to talk now? Call <a href="tel:+18572207689">(857) 220-7689</a>.';
+      } else {
+        successTitle.textContent = 'Almost there — hit send';
+        successText.textContent = 'Thanks, ' + first + ' — your request is ready to send to paramountwebdesign@outlook.com.';
+        successExtra.innerHTML = 'Your email app should have opened with everything filled in. If it didn\u2019t, <a href="' + mailto + '">click here to send it</a> — or call us at <a href="tel:+18572207689">(857) 220-7689</a>.';
+        window.location.href = mailto;
+      }
+      form.hidden = true;
+      success.hidden = false;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('f-name').value.trim();
+      var phone = document.getElementById('f-phone').value.trim();
+      var email = document.getElementById('f-email').value.trim();
+      var notes = document.getElementById('f-notes').value.trim();
+      var hp = (document.getElementById('f-hp') || {}).value || '';
+      if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+
+      var payload = { name: name, phone: phone, email: email, notes: notes, hp: hp, source: 'website form' };
+
+      var subject = 'Consult request — ' + name;
+      var body = 'Hi Paramount Web Design,\n\nI\'d like to book a free consult.\n\n' +
+        'Name: ' + name + '\n' +
+        'Phone: ' + (phone || '—') + '\n' +
+        'Email: ' + email + '\n\n' +
+        'Notes:\n' + (notes || '—') + '\n\n' +
+        '(Sent from the Paramount website booking form)';
+      var mailto = 'mailto:paramountwebdesign@outlook.com?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      fetch('/api/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r.json(); })
+        .then(function (j) { if (!j || j.ok !== true) throw new Error('bad response'); showSuccess(true, name, email); })
+        .catch(function () { showSuccess(false, name, email, mailto); });
+    });
+
+    resetBtn.addEventListener('click', function () {
+      form.reset();
+      form.hidden = false;
+      success.hidden = true;
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    // Hide the floating chat launcher while filling the form (keeps it off the fields on mobile)
+    form.addEventListener('focusin', function () { document.body.classList.add('form-focus'); });
+    form.addEventListener('focusout', function () { document.body.classList.remove('form-focus'); });
+  })();
+
+  /* ---------- Chatbot ---------- */
+  (function () {
+    'use strict';
+
+    /* ---------- Chat state ---------- */
+    var EMAIL = 'paramountwebdesign@outlook.com';
+    var PHONE = '(857) 220-7689';
+    var panel = document.getElementById('chatPanel');
+    var log = document.getElementById('chatLog');
+    var chips = document.getElementById('chatChips');
+    var form = document.getElementById('chatForm');
+    var field = document.getElementById('chatField');
+    var booking = null; // active booking flow state
+    var greeted = false;
+
+    function esc(s) {
+      var d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    function addMsg(text, who) {
+      var el = document.createElement('div');
+      el.className = 'msg ' + who;
+      el.innerHTML = text;
+      log.appendChild(el);
+      log.scrollTop = log.scrollHeight;
+      return el;
+    }
+
+    function botSay(text, delay) {
+      var t = document.createElement('div');
+      t.className = 'msg bot typing';
+      t.innerHTML = '<i></i><i></i><i></i>';
+      log.appendChild(t);
+      log.scrollTop = log.scrollHeight;
+      setTimeout(function () {
+        t.remove();
+        addMsg(text, 'bot');
+      }, delay || 700);
+    }
+
+    function setChips(list) {
+      chips.innerHTML = '';
+      (list || []).forEach(function (label) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'chip-btn';
+        b.textContent = label;
+        b.addEventListener('click', function () {
+          handleUser(label);
+        });
+        chips.appendChild(b);
+      });
+    }
+
+    function openChat() {
+      panel.classList.add('open');
+      if (!greeted) {
+        greeted = true;
+        botSay('Hey there — thanks for stopping by 👋 I can answer questions about our services and pricing, or book you a free consult. What can I help with?', 500);
+        setChips(['How much is a website?', 'What\u2019s included?', 'Book a free consult', 'Talk to a human']);
+      }
+      setTimeout(function () { field.focus(); }, 350);
+    }
+    function closeChat() { panel.classList.remove('open'); }
+
+    document.querySelectorAll('[data-chat-open]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        if (el.tagName === 'A') e.preventDefault();
+        openChat();
+      });
+    });
+    document.querySelectorAll('[data-chat-close]').forEach(function (el) {
+      el.addEventListener('click', closeChat);
+    });
+
+    /* ---------- Booking flow ---------- */
+    function startBooking() {
+      booking = { step: 'service' };
+      botSay('Love it. Let\u2019s get you booked for a free consult — it takes about 30 seconds. First: what\u2019s this for?', 400);
+      setChips(['A new website', 'A redesign', 'Branding', 'Social media / SEO', 'Not sure yet']);
+    }
+
+    function bookingStep(answer) {
+      var s = booking.step;
+      if (s === 'service') {
+        booking.service = answer;
+        booking.step = 'name';
+        botSay('Great choice. What\u2019s your name?', 400);
+        setChips([]);
+      } else if (s === 'name') {
+        booking.name = answer.trim() || 'there';
+        booking.step = 'email';
+        botSay('Nice to meet you, ' + esc(booking.name.split(' ')[0]) + '. What\u2019s the best email to reach you?', 400);
+        setChips([]);
+      } else if (s === 'email') {
+        var v = answer.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+          botSay('Hmm, that doesn\u2019t look like an email address. Could you try again? (e.g. you@yourbusiness.com)', 400);
+          return;
+        }
+        booking.email = v;
+        booking.step = 'business';
+        botSay('Perfect. What\u2019s your business called? (Or type <b>skip</b>.)', 400);
+        setChips(['Skip']);
+      } else if (s === 'business') {
+        booking.business = (answer.toLowerCase() === 'skip') ? '' : answer.trim();
+        booking.step = 'time';
+        botSay('Last one: any day or time that works best for a call?', 400);
+        setChips(['Weekday mornings', 'Weekday afternoons', 'Evenings', 'You pick']);
+      } else if (s === 'time') {
+        booking.time = answer;
+        booking.step = 'done';
+        var subject = encodeURIComponent('Consult request — ' + booking.name + (booking.business ? ' (' + booking.business + ')' : ''));
+        var bodyLines = [
+          'Hi Paramount Web Design,',
+          '',
+          'I\u2019d like to book a free consult.',
+          '',
+          'Name: ' + booking.name,
+          'Email: ' + booking.email,
+          (booking.business ? 'Business: ' + booking.business + '\n' : '') +
+          'Interested in: ' + booking.service,
+          'Preferred time: ' + booking.time,
+          '',
+          '(Sent from the Paramount website chat)'
+        ];
+        booking.mailto = 'mailto:' + EMAIL + '?subject=' + subject + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+        var summary = 'All set — here\u2019s what I\u2019ve got:<br>' +
+          '• <strong>Name:</strong> ' + esc(booking.name) + '<br>' +
+          '• <strong>Email:</strong> ' + esc(booking.email) + '<br>' +
+          (booking.business ? '• <strong>Business:</strong> ' + esc(booking.business) + '<br>' : '') +
+          '• <strong>Interest:</strong> ' + esc(booking.service) + '<br>' +
+          '• <strong>Best time:</strong> ' + esc(booking.time) + '<br><br>' +
+          'Hit the button below and your request goes straight to our team — we\u2019ll confirm your slot within one business day. Or call us directly at <a class="msg-link" href="tel:+18572207689">' + PHONE + '</a>.';
+        botSay(summary, 500);
+        setChips(['Send booking request ✉', 'Start over']);
+      }
+    }
+
+    function sendBookingRequest() {
+      var b = booking;
+      var payload = {
+        name: b.name,
+        email: b.email,
+        phone: '',
+        notes: 'Interested in: ' + b.service +
+          (b.business ? '\nBusiness: ' + b.business : '') +
+          '\nPreferred time: ' + b.time,
+        source: 'chat assistant'
+      };
+      fetch('/api/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r.json(); })
+        .then(function (j) {
+          if (!j || j.ok !== true) throw new Error('bad response');
+          booking = null;
+          botSay('<strong>Sent!</strong> Your consult request is in — we\u2019ll confirm within one business day. Anything else I can help with?', 400);
+          setChips(DEFAULT_CHIPS);
+        })
+        .catch(function () {
+          botSay('Hmm, I couldn\u2019t send that automatically — no worries. <a class="msg-link" href="' + b.mailto + '">Click here to email your request</a> instead, or call ' + PHONE + '.', 400);
+          setChips(DEFAULT_CHIPS);
+        });
+    }
+
+    /* ---------- Intent matching ---------- */
+    var INTENTS = [
+      {
+        keys: ['price', 'pricing', 'cost', 'how much', 'fee', 'charge', 'expensive', 'afford', 'budget', 'payment', 'invoice', '1000', '99'],
+        reply: 'Our pricing is simple and two-part: a <strong>$1,000 one-time build fee</strong> for your custom website, then <strong>$99/month</strong> for the care plan — hosting, security, backups, ongoing edits, and monthly check-ins all included. Want me to book you a free consult to talk it through?'
+      },
+      {
+        keys: ['include', 'included', 'what do i get', 'whats in', "what's in", 'cover', 'hosting', 'host', 'maintenance', 'support', 'update', 'backup', 'security'],
+        reply: 'The $1,000 build covers the custom design, build, and launch of your site. The $99/month care plan covers hosting, security, backups, fixes, ongoing edits and updates (new pages, photos, offers — just ask), and a monthly check-in on how it all performs.'
+      },
+      {
+        keys: ['book', 'appointment', 'schedule', 'consult', 'call', 'meeting', 'talk', 'meet', 'signup', 'sign up', 'start', 'hire', 'get started', 'onboard'],
+        reply: '__BOOK__'
+      },
+      {
+        keys: ['service', 'services', 'offer', 'do you do', 'what do you', 'help with'],
+        reply: 'We have six services under one roof: <strong>Web Design</strong> ($1,000 build + $99/mo care), <strong>Branding</strong>, <strong>Social Media</strong> management, <strong>Local SEO</strong>, <strong>Graphic Design</strong>, and <strong>Digital Marketing</strong>. Which one are you curious about?'
+      },
+      {
+        keys: ['seo', 'google', 'search', 'rank', 'ranking', 'found'],
+        reply: 'Our Local SEO service gets you found by customers already searching for you — Google Business Profile optimization and more. Ask us for a custom quote; bundling it with a website saves you money.'
+      },
+      {
+        keys: ['brand', 'logo', 'identity'],
+        reply: 'Our branding service covers logo, identity, and visual systems that make you unforgettable — from strategy to rollout. Ask us for a custom quote, or I can book you a consult.'
+      },
+      {
+        keys: ['social', 'instagram', 'facebook', 'tiktok'],
+        reply: 'We handle social media content, management, and growth strategies that build real community around your business — on a monthly management basis. Want a quote?'
+      },
+      {
+        keys: ['long', 'time', 'timeline', 'take', 'weeks', 'days', 'launch', 'fast', 'when'],
+        reply: 'It depends on scope — most small business sites come together in a few weeks once we have your content and photos. We\u2019ll give you a clear timeline in your proposal before anything starts.'
+      },
+      {
+        keys: ['own', 'ownership', 'contract', 'cancel', 'term', 'lock', 'commitment', 'cancel anytime', 'minimum'],
+        reply: 'You pay for the build, so the site is built for you and your business. The $99/month care plan covers hosting, security, backups, and ongoing updates — and if you ever want to change or pause it, just talk to us. We\u2019ll work it out with you.'
+      },
+      {
+        keys: ['who', 'about', 'paramount', 'team', 'family', 'boston', 'where', 'location', 'local'],
+        reply: 'We\u2019re a family-owned, Boston-based studio founded in 2023. We believe a website should be a living asset, not a one-time project — so we build custom sites and look after them every month after.'
+      },
+      {
+        keys: ['human', 'person', 'real', 'someone', 'representative', 'agent', 'email', 'contact', 'phone', 'number', 'reach'],
+        reply: 'Of course — you can reach a real human at <a class="msg-link" href="mailto:' + EMAIL + '">' + EMAIL + '</a> or <a class="msg-link" href="tel:+18572207689">' + PHONE + '</a>. Or I can book you a free consult and they\u2019ll call you.'
+      },
+      {
+        keys: ['portfolio', 'examples', 'work', 'sample', 'see your', 'case stud'],
+        reply: 'We\u2019d love to show you our work — the best examples are tailored to what you\u2019re building, so book a free consult and we\u2019ll walk you through projects like yours.'
+      },
+      {
+        keys: ['ecommerce', 'shop', 'store', 'sell', 'products', 'online store'],
+        reply: 'Yes — we build online stores too. E-commerce projects are scoped individually, so book a free consult and we\u2019ll put together a plan for your shop.'
+      },
+      {
+        keys: ['thank', 'thanks', 'great', 'awesome', 'perfect', 'cool'],
+        reply: 'You\u2019re welcome! Anything else I can help with — pricing, services, or booking that consult?'
+      },
+      {
+        keys: ['hi', 'hey', 'hello', 'yo', 'sup', 'good morning', 'good afternoon', 'good evening'],
+        reply: 'Hello! I can answer questions about our services and pricing, or book you a free consult with the team. What\u2019s on your mind?'
+      }
+    ];
+
+    var DEFAULT_CHIPS = ['How much is a website?', 'What\u2019s included?', 'Book a free consult', 'Talk to a human'];
+
+    function handleUser(text) {
+      addMsg(esc(text), 'user');
+      var t = text.toLowerCase();
+
+      if (booking && booking.step && booking.step !== 'done') {
+        bookingStep(text);
+        return;
+      }
+
+      // After a completed booking: "Send…" submits it, "Start over" rebooks
+      if (booking && booking.step === 'done') {
+        if (t.indexOf('send') === 0) { sendBookingRequest(); return; }
+        if (/start over|again|book|consult/i.test(t)) { startBooking(); return; }
+      }
+
+      for (var i = 0; i < INTENTS.length; i++) {
+        var hit = INTENTS[i].keys.some(function (k) { return t.indexOf(k) !== -1; });
+        if (hit) {
+          if (INTENTS[i].reply === '__BOOK__') { startBooking(); return; }
+          botSay(INTENTS[i].reply, 600);
+          setChips(DEFAULT_CHIPS);
+          return;
+        }
+      }
+
+      botSay('Good question — I want to make sure you get a real answer, not a guess. The fastest way is a free consult with our team, or you can email <a class="msg-link" href="mailto:' + EMAIL + '">' + EMAIL + '</a>. Want me to book you in?', 600);
+      setChips(['Book a free consult', 'How much is a website?', 'What\u2019s included?']);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = field.value.trim();
+      if (!v) return;
+      field.value = '';
+      handleUser(v);
+    });
+  })();
+  </script>
+</body>
+</html>
